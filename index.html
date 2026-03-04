@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
-:root { --primary-color:#4e73df; --secondary-color:#6f42c1; --dark-color:#2e3a59; --light-color:#f8f9fc; --menu-width:280px;}
+:root{--primary-color:#4e73df;--secondary-color:#6f42c1;--dark-color:#2e3a59;--light-color:#f8f9fc;--menu-width:280px;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{height:100%;}
 html{scroll-behavior:smooth;}
@@ -19,7 +19,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#444;backgrou
 .side-menu{width:var(--menu-width);background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));color:white;padding:30px 0;position:fixed;height:100vh;overflow-y:auto;box-shadow:3px 0 10px rgba(0,0,0,0.1);z-index:1000;}
 
 .profile-section{text-align:center;padding:0 20px 30px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:20px;}
-.profile-img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid white;margin-bottom:20px;background-color:#fff;}
+.profile-img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid white;margin-bottom:20px;background:#fff;}
 .profile-name{font-weight:700;font-size:1.5rem;margin-bottom:5px;}
 .profile-title{font-weight:300;opacity:0.9;margin-bottom:15px;}
 
@@ -39,7 +39,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#444;backgrou
 
 .main-content{flex:1;margin-left:var(--menu-width);padding:30px;}
 
-.section{background:white;border-radius:10px;padding:30px;box-shadow:0 5px 15px rgba(0,0,0,0.05);margin-bottom:30px;scroll-margin-top:20px;}
+.section{background:white;border-radius:10px;padding:30px;box-shadow:0 5px 15px rgba(0,0,0,0.05);margin-bottom:30px;}
 
 .section-title{font-weight:800;color:var(--dark-color);margin-bottom:1.5rem;position:relative;padding-bottom:15px;display:flex;align-items:center;}
 .section-title i{margin-right:15px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;}
@@ -67,7 +67,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#444;backgrou
 
 <div class="side-menu">
 <div class="profile-section">
-<img class="profile-img" src="sheshupic.jpeg">
+<img class="profile-img" src="sheshupic.jpeg" alt="Profile">
 <h2 class="profile-name">SHESHMA</h2>
 <p class="profile-title">Data Scientist</p>
 
@@ -86,118 +86,124 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#444;backgrou
 <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
 <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
 <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+<li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+<li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+<li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+<li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
 </ul>
 </div>
 
 <div class="main-content">
 
-<section id="projects" class="section">
+<!-- HOME -->
+<section id="home" class="section">
+<h1>Hi, I'm Sheshma</h1>
+<p>Applied Data Science graduate student focused on machine learning, analytics, and building data-driven solutions.</p>
+</section>
 
+<!-- SKILLS (UPDATED) -->
+<section id="skills" class="section">
+<h2 class="section-title"><i class="fas fa-code"></i> Technical Skills</h2>
+
+<div class="skills-category">
+<h4><i class="fas fa-laptop-code"></i> Programming Languages</h4>
+<span class="skill-badge">Python</span>
+<span class="skill-badge">SQL</span>
+<span class="skill-badge">R</span>
+<span class="skill-badge">Pandas</span>
+<span class="skill-badge">NumPy</span>
+<span class="skill-badge">Scikit-learn</span>
+<span class="skill-badge">XGBoost</span>
+</div>
+
+<div class="skills-category">
+<h4><i class="fas fa-chart-bar"></i> Visualization</h4>
+<span class="skill-badge">Excel</span>
+<span class="skill-badge">Tableau</span>
+<span class="skill-badge">Matplotlib</span>
+<span class="skill-badge">Seaborn</span>
+<span class="skill-badge">Plotly</span>
+<span class="skill-badge">Streamlit</span>
+</div>
+
+<div class="skills-category">
+<h4><i class="fas fa-brain"></i> Machine Learning</h4>
+<span class="skill-badge">Predictive Modeling</span>
+<span class="skill-badge">Logistic Regression</span>
+<span class="skill-badge">Random Forest</span>
+<span class="skill-badge">Gradient Boosting</span>
+<span class="skill-badge">XGBoost</span>
+</div>
+
+<div class="skills-category">
+<h4><i class="fas fa-tools"></i> Tools</h4>
+<span class="skill-badge">Git</span>
+<span class="skill-badge">Docker</span>
+<span class="skill-badge">AWS S3</span>
+<span class="skill-badge">AWS SageMaker</span>
+<span class="skill-badge">AWS Athena</span>
+<span class="skill-badge">MySQL</span>
+</div>
+
+</section>
+
+<!-- PROJECTS (UPDATED) -->
+<section id="projects" class="section">
 <h2 class="section-title"><i class="fas fa-project-diagram"></i> Course Projects</h2>
 
 <div class="row">
 
-<!-- CO2 PROJECT -->
+<div class="col-md-6">
+<div class="project-card card">
+<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789" class="card-img-top project-img">
+<div class="card-body">
+<h5 class="card-title"><i class="fas fa-industry"></i> Tailpipe CO2 Emission Modeling</h5>
+<p>Regression modeling predicting vehicle emissions.</p>
+<a href="https://github.com/SheshmaJ/Predictive-modelling-of-Tailpipe-CO2-emission-for-Early-vehicle-Analysis.git" class="read-more"><i class="fab fa-github"></i> View Project</a>
+</div>
+</div>
+</div>
 
 <div class="col-md-6">
 <div class="project-card card">
-
-<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789" class="project-img">
-
+<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" class="card-img-top project-img">
 <div class="card-body">
-
-<h5 class="card-title"><i class="fas fa-industry"></i> Predictive Modeling of Tailpipe CO₂ Emissions</h5>
-
-<p>Statistical modeling to predict vehicle emissions.</p>
-
-<a href="https://github.com/SheshmaJ/Predictive-modelling-of-Tailpipe-CO2-emission-for-Early-vehicle-Analysis.git" class="read-more" target="_blank">
-<i class="fab fa-github"></i> View Project
-</a>
-
-</div>
-</div>
-</div>
-
-<!-- HOUSE PROJECT -->
-
-<div class="col-md-6">
-<div class="project-card card">
-
-<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" class="project-img">
-
-<div class="card-body">
-
 <h5 class="card-title"><i class="fas fa-home"></i> House Price Prediction</h5>
-
 <p>Machine learning models predicting housing prices.</p>
-
-<a href="https://github.com/SheshmaJ/House-Sales-Project.git" class="read-more" target="_blank">
-<i class="fab fa-github"></i> View Project
-</a>
-
+<a href="https://github.com/SheshmaJ/House-Sales-Project.git" class="read-more"><i class="fab fa-github"></i> View Project</a>
 </div>
 </div>
 </div>
-
-<!-- VEHICLE FRAUD -->
 
 <div class="col-md-6">
 <div class="project-card card">
-
-<img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b" class="project-img">
-
+<img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b" class="card-img-top project-img">
 <div class="card-body">
-
 <h5 class="card-title"><i class="fas fa-shield-alt"></i> Vehicle Insurance Fraud Detection</h5>
-
-<p>Machine learning classification models detecting fraudulent insurance claims.</p>
-
-<a href="https://github.com/SheshmaJ/Vehicle-Insurance-Fraud-detection.git" class="read-more" target="_blank">
-<i class="fab fa-github"></i> View Project
-</a>
-
+<p>ML classification models detecting fraudulent claims.</p>
+<a href="https://github.com/SheshmaJ/Vehicle-Insurance-Fraud-detection.git" class="read-more"><i class="fab fa-github"></i> View Project</a>
 </div>
 </div>
 </div>
-
-<!-- IOT OCCUPANCY -->
 
 <div class="col-md-6">
 <div class="project-card card">
-
-<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232" class="project-img">
-
+<img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232" class="card-img-top project-img">
 <div class="card-body">
-
 <h5 class="card-title"><i class="fas fa-microchip"></i> IoT Room Occupancy Prediction</h5>
-
-<p>ML classification models predicting occupancy using IoT sensor data.</p>
-
-<a href="https://github.com/SheshmaJ/ADS502_FinalProject.git" class="read-more" target="_blank">
-<i class="fab fa-github"></i> View Project
-</a>
-
+<p>Machine learning model predicting occupancy using IoT sensors.</p>
+<a href="https://github.com/SheshmaJ/ADS502_FinalProject.git" class="read-more"><i class="fab fa-github"></i> View Project</a>
 </div>
 </div>
 </div>
-
-<!-- ETL PROJECT -->
 
 <div class="col-md-6">
 <div class="project-card card">
-
-<img src="https://images.unsplash.com/photo-1585435557343-3b092031a831" class="project-img">
-
+<img src="https://images.unsplash.com/photo-1585435557343-3b092031a831" class="card-img-top project-img">
 <div class="card-body">
-
 <h5 class="card-title"><i class="fas fa-database"></i> FDA Drug Shortage ETL Pipeline</h5>
-
-<p>ETL pipeline integrating FDA drug shortage datasets for analytics.</p>
-
-<a href="https://github.com/SheshmaJ/ADS-507-Final-Team-Project.git" class="read-more" target="_blank">
-<i class="fab fa-github"></i> View Project
-</a>
-
+<p>ETL pipeline integrating FDA datasets for shortage analytics.</p>
+<a href="https://github.com/SheshmaJ/ADS-507-Final-Team-Project.git" class="read-more"><i class="fab fa-github"></i> View Project</a>
 </div>
 </div>
 </div>
@@ -206,7 +212,6 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#444;backgrou
 </section>
 
 </div>
-
 </body>
 </html>
 ```
