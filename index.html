@@ -2,275 +2,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sheshma Jaganathan - Data Scientist</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
+:root { --primary-color:#4e73df; --secondary-color:#6f42c1; --dark-color:#2e3a59; --light-color:#f8f9fc; --menu-width:280px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#444;background-color:#f5f7fb;display:flex;min-height:100vh;line-height:1.6;}
 
-:root{
---primary-color:#4e73df;
---secondary-color:#6f42c1;
---dark-color:#2e3a59;
---light-color:#f8f9fc;
---menu-width:280px;
-}
+.side-menu{width:var(--menu-width);background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));color:white;padding:30px 0;position:fixed;height:100vh;overflow-y:auto;box-shadow:3px 0 10px rgba(0,0,0,0.1);z-index:1000;}
 
-body{
-font-family:'Segoe UI';
-background:#f5f7fb;
-display:flex;
-min-height:100vh;
-color:#444;
-}
+.profile-section{text-align:center;padding:0 20px 30px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:20px;}
+.profile-img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid white;margin-bottom:20px;background-color:#fff;}
+.profile-name{font-weight:700;font-size:1.5rem;margin-bottom:5px;}
+.profile-title{font-weight:300;opacity:0.9;margin-bottom:15px;}
 
-.side-menu{
-width:var(--menu-width);
-background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));
-color:white;
-position:fixed;
-height:100vh;
-padding:30px 0;
-}
+.contact-info{margin-top:15px;font-size:0.9rem;}
+.contact-info div{margin-bottom:8px;display:flex;align-items:center;justify-content:center;}
+.contact-info i{margin-right:10px;width:16px;}
 
-.profile-section{
-text-align:center;
-padding-bottom:20px;
-border-bottom:1px solid rgba(255,255,255,0.2);
-}
+.social-links{display:flex;justify-content:center;gap:15px;margin-top:20px;}
+.social-links a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,0.1);color:white;border-radius:50%;transition:all 0.3s;text-decoration:none;}
+.social-links a:hover{background:white;color:var(--primary-color);transform:translateY(-3px);}
 
-.profile-img{
-width:120px;
-height:120px;
-border-radius:50%;
-border:4px solid white;
-object-fit:cover;
-margin-bottom:15px;
-}
+.menu-items{list-style:none;padding:0;margin:0;}
+.menu-items li{margin-bottom:5px;}
+.menu-items a{display:flex;align-items:center;color:white;padding:15px 30px;text-decoration:none;font-weight:600;transition:all 0.3s;border-left:5px solid transparent;}
+.menu-items a:hover,.menu-items a.active{background:rgba(255,255,255,0.1);border-left:5px solid white;padding-left:25px;}
+.menu-items i{width:25px;text-align:center;margin-right:15px;font-size:1.1rem;}
 
-.menu-items{
-list-style:none;
-padding:0;
-margin-top:20px;
-}
+.main-content{flex:1;margin-left:var(--menu-width);padding:30px;}
 
-.menu-items a{
-display:block;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-font-weight:600;
-}
+.section{background:white;border-radius:10px;padding:30px;box-shadow:0 5px 15px rgba(0,0,0,0.05);margin-bottom:30px;scroll-margin-top:20px;}
 
-.menu-items a:hover{
-background:rgba(255,255,255,0.2);
-}
+.section-title{font-weight:800;color:var(--dark-color);margin-bottom:1.5rem;position:relative;padding-bottom:15px;display:flex;align-items:center;}
+.section-title i{margin-right:15px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;}
 
-.main-content{
-margin-left:var(--menu-width);
-padding:30px;
-width:100%;
-}
+.skill-badge{display:inline-block;background:#e9ecef;color:var(--dark-color);padding:8px 15px;border-radius:20px;margin:0 8px 8px 0;font-weight:500;}
 
-.section{
-background:white;
-padding:30px;
-border-radius:10px;
-margin-bottom:30px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
+.project-card{border:none;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s;height:100%;margin-bottom:25px;}
+.project-card:hover{transform:translateY(-5px);}
+.project-img{height:200px;object-fit:cover;}
+.project-card .card-body{padding:25px;}
+.project-card .card-title{font-weight:700;color:var(--dark-color);margin-bottom:15px;display:flex;align-items:center;}
+.project-card .card-title i{margin-right:10px;color:var(--primary-color);}
+.tools-used{margin-top:15px;}
+.tool-badge{display:inline-block;background:var(--primary-color);color:white;padding:5px 10px;border-radius:15px;font-size:0.8rem;margin-right:5px;margin-bottom:5px;}
 
-.section-title{
-font-weight:800;
-margin-bottom:20px;
-}
+.responsibilities{list-style-type:none;padding-left:0;}
+.responsibilities li{margin-bottom:8px;position:relative;padding-left:25px;}
+.responsibilities li:before{content:'✔';position:absolute;left:0;color:var(--primary-color);font-weight:bold;}
 
-.hero-section{
-background:linear-gradient(135deg,#4e73df,#6f42c1);
-color:white;
-padding:60px;
-border-radius:10px;
-margin-bottom:40px;
-}
-
-.hero-title{
-font-size:2.5rem;
-font-weight:800;
-}
-
-.skill-badge{
-display:inline-block;
-background:#e9ecef;
-padding:8px 15px;
-border-radius:20px;
-margin:5px;
-}
-
-.project-card{
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-border:none;
-border-radius:10px;
-margin-bottom:25px;
-}
-
-.project-img{
-height:200px;
-object-fit:cover;
-}
-
-.tool-badge{
-background:var(--primary-color);
-color:white;
-padding:5px 10px;
-border-radius:12px;
-margin:3px;
-font-size:0.8rem;
-}
-
-.responsibilities{
-list-style:none;
-padding-left:0;
-}
-
-.responsibilities li{
-padding-left:20px;
-position:relative;
-margin-bottom:5px;
-}
-
-.responsibilities li::before{
-content:"✔";
-position:absolute;
-left:0;
-color:var(--primary-color);
-}
-
-.read-more{
-color:var(--primary-color);
-font-weight:600;
-text-decoration:none;
-}
-
+.read-more{color:var(--primary-color);font-weight:600;text-decoration:none;}
 </style>
 </head>
 
 <body>
 
 <div class="side-menu">
-
 <div class="profile-section">
+<img class="profile-img" src="sheshupic.jpeg">
+<h2 class="profile-name">SHESHMA</h2>
+<p class="profile-title">Data Scientist</p>
 
-<img src="sheshupic.jpeg" class="profile-img">
+<div class="contact-info">
+<div><i class="fas fa-envelope"></i> sheshma.jaganathan@gmail.com</div>
+<div><i class="fas fa-phone"></i> +1(669)-301-5691</div>
+</div>
 
-<h3>SHESHMA</h3>
-<p>Data Scientist</p>
-
-<p><i class="fas fa-envelope"></i> sheshma.jaganathan@gmail.com</p>
-<p><i class="fas fa-phone"></i> +1 (669) 301-5691</p>
-
-<a href="https://www.linkedin.com/in/sheshma-jaganathan/" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="https://github.com/SheshmaJ" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
+<div class="social-links">
+<a href="https://www.linkedin.com/in/sheshma-jaganathan/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://github.com/SheshmaJ" target="_blank"><i class="fab fa-github"></i></a>
+</div>
 </div>
 
 <ul class="menu-items">
-<li><a href="#home">Home</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#blog">Blog</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+<li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
 </ul>
-
 </div>
 
 <div class="main-content">
 
-<section id="home" class="section">
-
-<div class="hero-section">
-<h1 class="hero-title">Hi, I'm SHESHMA</h1>
-
-<p>
-MS Applied Data Science student passionate about building machine learning models,
-data pipelines, and analytics systems that transform raw data into actionable insights.
-</p>
-
-</div>
-
-</section>
-
-<section id="skills" class="section">
-
-<h2 class="section-title"><i class="fas fa-code"></i> Technical Skills</h2>
-
-<h5><i class="fas fa-laptop-code"></i> Programming</h5>
-
-<span class="skill-badge">Python</span>
-<span class="skill-badge">Pandas</span>
-<span class="skill-badge">NumPy</span>
-<span class="skill-badge">Scikit-learn</span>
-<span class="skill-badge">XGBoost</span>
-<span class="skill-badge">SQL</span>
-<span class="skill-badge">R</span>
-
-<h5 class="mt-4"><i class="fas fa-brain"></i> Machine Learning</h5>
-
-<span class="skill-badge">Classification</span>
-<span class="skill-badge">Regression</span>
-<span class="skill-badge">Logistic Regression</span>
-<span class="skill-badge">Random Forest</span>
-<span class="skill-badge">Gradient Boosting</span>
-<span class="skill-badge">XGBoost</span>
-
-<h5 class="mt-4"><i class="fas fa-chart-line"></i> Model Evaluation</h5>
-
-<span class="skill-badge">ROC-AUC</span>
-<span class="skill-badge">Precision</span>
-<span class="skill-badge">Recall</span>
-<span class="skill-badge">F1 Score</span>
-<span class="skill-badge">Confusion Matrix</span>
-<span class="skill-badge">Cross Validation</span>
-<span class="skill-badge">Hyperparameter Tuning</span>
-
-<h5 class="mt-4"><i class="fas fa-database"></i> Data Engineering</h5>
-
-<span class="skill-badge">ETL / ELT</span>
-<span class="skill-badge">MySQL</span>
-<span class="skill-badge">Data Wrangling</span>
-<span class="skill-badge">Schema Design</span>
-
-<h5 class="mt-4"><i class="fas fa-cloud"></i> Cloud & MLOps</h5>
-
-<span class="skill-badge">AWS S3</span>
-<span class="skill-badge">AWS SageMaker</span>
-<span class="skill-badge">AWS Athena</span>
-<span class="skill-badge">CI/CD</span>
-
-<h5 class="mt-4"><i class="fas fa-chart-bar"></i> Visualization</h5>
-
-<span class="skill-badge">Matplotlib</span>
-<span class="skill-badge">Seaborn</span>
-<span class="skill-badge">Plotly</span>
-<span class="skill-badge">Streamlit</span>
-<span class="skill-badge">Tableau</span>
-
-</section>
-
 <section id="projects" class="section">
 
-<h2 class="section-title"><i class="fas fa-project-diagram"></i> Data Science Projects</h2>
+<h2 class="section-title"><i class="fas fa-project-diagram"></i> Course Projects</h2>
 
 <div class="row">
+
+<!-- CO2 PROJECT -->
 
 <div class="col-md-6">
 <div class="project-card card">
@@ -279,19 +106,19 @@ data pipelines, and analytics systems that transform raw data into actionable in
 
 <div class="card-body">
 
-<h5><i class="fas fa-industry"></i> Predictive Modeling of Tailpipe CO₂ Emissions</h5>
+<h5 class="card-title"><i class="fas fa-industry"></i> Predictive Modeling of Tailpipe CO₂ Emissions</h5>
 
-<p>
-Statistical analysis predicting vehicle CO2 emissions using regression modeling.
-</p>
+<p>Statistical modeling to predict vehicle emissions.</p>
 
-<a href="https://github.com/SheshmaJ/Predictive-modelling-of-Tailpipe-CO2-emission-for-Early-vehicle-Analysis.git" class="read-more">
+<a href="https://github.com/SheshmaJ/Predictive-modelling-of-Tailpipe-CO2-emission-for-Early-vehicle-Analysis.git" class="read-more" target="_blank">
 <i class="fab fa-github"></i> View Project
 </a>
 
 </div>
 </div>
 </div>
+
+<!-- HOUSE PROJECT -->
 
 <div class="col-md-6">
 <div class="project-card card">
@@ -300,19 +127,19 @@ Statistical analysis predicting vehicle CO2 emissions using regression modeling.
 
 <div class="card-body">
 
-<h5><i class="fas fa-home"></i> House Price Prediction</h5>
+<h5 class="card-title"><i class="fas fa-home"></i> House Price Prediction</h5>
 
-<p>
-Built regression and ensemble ML models to predict housing prices.
-</p>
+<p>Machine learning models predicting housing prices.</p>
 
-<a href="https://github.com/SheshmaJ/House-Sales-Project.git" class="read-more">
+<a href="https://github.com/SheshmaJ/House-Sales-Project.git" class="read-more" target="_blank">
 <i class="fab fa-github"></i> View Project
 </a>
 
 </div>
 </div>
 </div>
+
+<!-- VEHICLE FRAUD -->
 
 <div class="col-md-6">
 <div class="project-card card">
@@ -321,19 +148,19 @@ Built regression and ensemble ML models to predict housing prices.
 
 <div class="card-body">
 
-<h5><i class="fas fa-shield-alt"></i> Vehicle Insurance Fraud Detection</h5>
+<h5 class="card-title"><i class="fas fa-shield-alt"></i> Vehicle Insurance Fraud Detection</h5>
 
-<p>
-Machine learning models detecting fraudulent insurance claims.
-</p>
+<p>Machine learning classification models detecting fraudulent insurance claims.</p>
 
-<a href="https://github.com/SheshmaJ/Vehicle-Insurance-Fraud-detection.git" class="read-more">
+<a href="https://github.com/SheshmaJ/Vehicle-Insurance-Fraud-detection.git" class="read-more" target="_blank">
 <i class="fab fa-github"></i> View Project
 </a>
 
 </div>
 </div>
 </div>
+
+<!-- IOT OCCUPANCY -->
 
 <div class="col-md-6">
 <div class="project-card card">
@@ -342,19 +169,19 @@ Machine learning models detecting fraudulent insurance claims.
 
 <div class="card-body">
 
-<h5><i class="fas fa-microchip"></i> IoT Room Occupancy Prediction</h5>
+<h5 class="card-title"><i class="fas fa-microchip"></i> IoT Room Occupancy Prediction</h5>
 
-<p>
-ML pipeline predicting occupancy using environmental sensor data.
-</p>
+<p>ML classification models predicting occupancy using IoT sensor data.</p>
 
-<a href="https://github.com/SheshmaJ/ADS502_FinalProject.git" class="read-more">
+<a href="https://github.com/SheshmaJ/ADS502_FinalProject.git" class="read-more" target="_blank">
 <i class="fab fa-github"></i> View Project
 </a>
 
 </div>
 </div>
 </div>
+
+<!-- ETL PROJECT -->
 
 <div class="col-md-6">
 <div class="project-card card">
@@ -363,13 +190,11 @@ ML pipeline predicting occupancy using environmental sensor data.
 
 <div class="card-body">
 
-<h5><i class="fas fa-database"></i> FDA Drug Shortage ETL Pipeline</h5>
+<h5 class="card-title"><i class="fas fa-database"></i> FDA Drug Shortage ETL Pipeline</h5>
 
-<p>
-Scalable ETL pipeline integrating FDA shortage datasets.
-</p>
+<p>ETL pipeline integrating FDA drug shortage datasets for analytics.</p>
 
-<a href="https://github.com/SheshmaJ/ADS-507-Final-Team-Project.git" class="read-more">
+<a href="https://github.com/SheshmaJ/ADS-507-Final-Team-Project.git" class="read-more" target="_blank">
 <i class="fab fa-github"></i> View Project
 </a>
 
@@ -378,7 +203,6 @@ Scalable ETL pipeline integrating FDA shortage datasets.
 </div>
 
 </div>
-
 </section>
 
 </div>
